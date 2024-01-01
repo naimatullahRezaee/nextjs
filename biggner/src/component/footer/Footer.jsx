@@ -1,6 +1,14 @@
+import styles from "./footer.module.css"
 const Footer = ()=>{
     return (
-        <div>Footer Page</div>
+        <div className={styles.container}>
+            <div className={styles.logo}>CodingRah</div>
+            <div className={styles.text}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            </div>
+
+
+        </div>
     )
 }
 
