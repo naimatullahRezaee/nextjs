@@ -1,7 +1,7 @@
-const ContactPage = ()=>{
+const AdminPage = ()=>{
     return (
-        <div>Contact Page</div>
+        <div>Admin Page</div>
     )
 }
 
-export default ContactPage
+export default AdminPage
