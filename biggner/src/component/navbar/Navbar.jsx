@@ -1,11 +1,12 @@
 
+import Link from "next/link"
 import Links from "./links/Links"
 import sytles from "./navbar.module.css"
 const Navbar = () =>{
     return (
         <div className={sytles.container}>
             
-            <div className={sytles.logo}>Logo</div>
+            <Link href="/" className={sytles.logo}>Logo</Link>
             <div>
                 <Links/>
 

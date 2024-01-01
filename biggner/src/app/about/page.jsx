@@ -1,6 +1,12 @@
+import Image from "next/image"
+import styles from "./about.module.css"
 const AboutPage = ()=>{
     return (
-        <div>About Page</div>
+        <div>
+            <div className={styles.imgContainer}>
+        <Image src="/about.png" fill/>
+        </div>
+        </div>
     )
 }
 
