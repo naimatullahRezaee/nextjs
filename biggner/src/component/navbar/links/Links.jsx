@@ -3,6 +3,7 @@ import Link from "next/link";
 import sytles from "./links.module.css"
 import NavLink from "./navLink/navLinks";
 import { useState } from "react";
+import Image from "next/image";
 const Links =()=>{
 
     const links =[
@@ -46,7 +47,7 @@ const Links =()=>{
                 )}
 
         </div>
-        <button className={sytles.menubutton} onClick={()=> setOpen((perv) => !perv)}>Menu</button>
+        <Image className={sytles.menubutton} src="/menu.png" alt="" width={30}  height={30} onClick={()=> setOpen((perv) => !perv)}/>
         {
             open && (
                 <div className={sytles.mobilelinks}>
