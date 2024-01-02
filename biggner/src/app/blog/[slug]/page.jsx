@@ -1,6 +1,9 @@
 import Image from "next/image"
 import sytles from "./singlepost.module.css"
 const SingleBlog=()=>{
+
+
+    
     return (
         <div className={sytles.container}>
             <div className={sytles.imgcontainer}>
