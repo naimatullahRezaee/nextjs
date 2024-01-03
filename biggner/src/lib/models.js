@@ -1,28 +1,25 @@
 import mongoose from "mongoose";
-import { stringifyCookie } from "next/dist/compiled/@edge-runtime/cookies";
 
 const userSchema = new mongoose.Schema(
 	{
 		username: {
-			type: string,
+			type: String,
 			required: true,
 			unique: true,
 			min: 3,
-			max: 30,
+			max: 20,
 		},
 		email: {
-			type: string,
+			type: String,
 			required: true,
 			unique: true,
 			max: 50,
 		},
 		password: {
-			type: string,
-			required: true,
-			min: 6,
+			type: String,
 		},
 		img: {
-			type: string,
+			type: String,
 		},
 		isAdmin: {
 			type: Boolean,
@@ -35,23 +32,22 @@ const userSchema = new mongoose.Schema(
 const postSchema = new mongoose.Schema(
 	{
 		title: {
-			type: string,
+			type: String,
 			required: true,
 		},
 		desc: {
-			type: string,
+			type: String,
 			required: true,
 		},
-
 		img: {
-			type: string,
+			type: String,
 		},
 		userId: {
-			type: Boolean,
+			type: String,
 			required: true,
 		},
 		slug: {
-			type: string,
+			type: String,
 			required: true,
 			unique: true,
 		},
@@ -59,5 +55,5 @@ const postSchema = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-export const User = mongoose.models.User || mongoose.model("User", userSchema);
-export const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
+export const User = mongoose.models?.User || mongoose.model("User", userSchema);
+export const Post = mongoose.models?.Post || mongoose.model("Post", postSchema);

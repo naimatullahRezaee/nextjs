@@ -1,31 +1,35 @@
-import PostCard from "@/component/postCard/postCard"
-import styles from "./blog.module.css"
+// FETCH DATA WITH AN API
+// const getData = async () => {
+// 	const res = await fetch("http://localhost:3000/api/blog", {
+// 		next: { revalidate: 3600 },
+// 	});
+import { getPosts } from "@/lib/data";
+import styles from "./blog.module.css";
+import PostCard from "@/component/postCard/postCard";
 
-const getData = async ()=>{
-    const respone = await fetch("https://jsonplaceholder.typicode.com/posts")
-    if (!respone.ok){
-        throw new Error("Something went wrong")
-    }
-    return respone.json()
-}
+// 	if (!res.ok) {
+// 		throw new Error("Something went wrong");
+// 	}
 
+// 	return res.json();
+// };
 
-const BlogPage = async ()=>{
-    const posts= await getData()
-    return (
-        <div className={styles.container}>
-            {posts.map((post)=>(
-                    <div className={styles.post}>
-                    <PostCard post={post}/>
-                    </div>
-            ))}
+const BlogPage = async () => {
+	// FETCH DATA WITH AN API
+	// const posts = await getData();
 
-            
-            
-            
+	// FETCH DATA WITHOUT AN API
+	const posts = await getPosts();
 
-        </div>
-    )
-}
+	return (
+		<div className={styles.container}>
+			{posts.map((post) => (
+				<div className={styles.post} key={post.id}>
+					<PostCard post={post} />
+				</div>
+			))}
+		</div>
+	);
+};
 
-export default BlogPage
+export default BlogPage;
